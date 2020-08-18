@@ -26,7 +26,7 @@ public class NumberChooser {
     
     private BorderPane borderPane = new BorderPane();
     private Stage numberChooserStage = new Stage();
-    private Scene ncScene = new Scene(borderPane, 290, 90);
+    private Scene ncScene = new Scene(borderPane, 290, 80);
     private Button[] buttonArray = new Button[35];
     private Left left1;
     private Label[] excludedLabelArray;
@@ -70,7 +70,7 @@ public class NumberChooser {
             else if((y>19) && (y<30)){
                 hboxArray[2].getChildren().add(buttonArray[y]);
             }
-            else if((y>29) && (y<40)){
+            else if((y>29) && (y<35)){
                 hboxArray[3].getChildren().add(buttonArray[y]);
             }
             /*

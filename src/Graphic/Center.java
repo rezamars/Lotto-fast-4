@@ -27,10 +27,10 @@ public class Center extends VBox{
     private Label headingLabel = new Label("Lottorader:");
     private HBox spaceHbox = new HBox();
     
-    private HBox[] hboxLabelArray = new HBox[6];
-    private Label[] rowNumberlabelArray = new Label[6];
+    private HBox[] hboxLabelArray = new HBox[11];
+    private Label[] rowNumberlabelArray = new Label[11];
     
-    private Label[] kenoLabelArray = new Label[66];
+    private Label[] lottoLabelArray = new Label[77];
     
     
     public Center(){
@@ -71,7 +71,13 @@ public class Center extends VBox{
             Background background = new Background(background_fill);
             rowNumberlabelArray[x].setBackground(background);
             
-            rowNumberlabelArray[x].setText(" " + Integer.toString((x+1)) + " ");
+            if (x < 9){
+                rowNumberlabelArray[x].setText(" " + Integer.toString((x+1)) + " ");
+            }
+            else{
+                rowNumberlabelArray[x].setText("" + Integer.toString((x+1)) + "");
+            }
+            
             
             rowNumberlabelArray[x].setFont(labelFont);
             rowNumberlabelArray[x].setAlignment(Pos.BOTTOM_CENTER);
@@ -81,18 +87,20 @@ public class Center extends VBox{
         Font numberLabelFont ;
         numberLabelFont = Font.font("Arial", FontWeight.BOLD, 15);
         
-        //creating objects of the kenonumber labelarray and setting properties
-        for(int w = 0 ; w < kenoLabelArray.length ; w++){
-            kenoLabelArray[w] = new Label();
-            kenoLabelArray[w].setAlignment(Pos.TOP_CENTER);
-            kenoLabelArray[w].setTextFill(Color.BLUE);
-            kenoLabelArray[w].setFont(numberLabelFont);
+        //creating objects of the lottoNumberArray labelarray and setting properties
+        
+        for(int w = 0 ; w < lottoLabelArray.length ; w++){
+            lottoLabelArray[w] = new Label();
+            lottoLabelArray[w].setAlignment(Pos.TOP_CENTER);
+            lottoLabelArray[w].setTextFill(Color.BLUE);
+            lottoLabelArray[w].setFont(numberLabelFont);
         }
         
-        int totalLabels = (rowNumberlabelArray.length +  kenoLabelArray.length);
+        
+        int totalLabels = (rowNumberlabelArray.length +  lottoLabelArray.length);
         int squareNumber = 0; 
         int hboxIndex = 0;
-        int kenoRowIndex = 0;
+        int lottoRowIndex = 0;
         
         //filling the keno rows-part of the grafics of center
         for (int addIndex = 0 ; addIndex < totalLabels ; addIndex++ ){
@@ -102,78 +110,82 @@ public class Center extends VBox{
                     squareNumber++;
                     break;
                 case 1:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
                     squareNumber++;
-                    kenoRowIndex++;
+                    lottoRowIndex++;
                     break;
                 case 2:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
+                    lottoRowIndex++;
                     squareNumber++;
                     break;
                 case 3:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
+                    lottoRowIndex++;
                     squareNumber++;
                     
                     break;
                 case 4:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
+                    lottoRowIndex++;
                     squareNumber++;
                     break;
                 case 5:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
                     squareNumber++;
-                    kenoRowIndex++;
+                    lottoRowIndex++;
                     break;
                 case 6:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
+                    lottoRowIndex++;
                     squareNumber++;
                     break;
                 case 7:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
                     squareNumber++;
-                    kenoRowIndex++;
+                    lottoRowIndex++;
+                    hboxIndex++;
+                    squareNumber = 0;
                     break;
+                   /*
                 case 8:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
+                    lottoRowIndex++;
                     squareNumber++;
                     break;
+                    
                 case 9:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
                     kenoRowIndex++;
                     squareNumber++;
                     break;
                 case 10:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
                     kenoRowIndex++;
                     squareNumber++;
                     break;
                 case 11:
-                    hboxLabelArray[hboxIndex].getChildren().add(kenoLabelArray[kenoRowIndex]);
+                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
                     kenoRowIndex++;
                     hboxIndex++;
                     squareNumber = 0;
-                    break;    
+                    break;
+                    */
                 default:
                     break;
             }
             
         }
         
+        
         this.getChildren().addAll(hboxLabelArray);
        
     }
   
-    public Label[] getKenorowArray(){
-        return this.kenoLabelArray;
-    }
     
-    public Label[] getKenoLabelArray(){
-        return this.kenoLabelArray;
+    
+    public Label[] getLottoLabelArray(){
+        return this.lottoLabelArray;
     }
     
 }

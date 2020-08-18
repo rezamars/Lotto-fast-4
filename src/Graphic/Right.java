@@ -26,7 +26,7 @@ import javafx.stage.Screen;
 //the right-object of the borderpane
 public class Right extends VBox{
     
-    private Button ranButton = new Button("Slumpa 6 rader");
+    private Button ranButton = new Button("Slumpa 11 rader");
     
     private HBox spaceHbox1 = new HBox();
     private HBox spaceHbox2 = new HBox();
