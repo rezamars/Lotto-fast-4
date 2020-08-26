@@ -29,10 +29,10 @@ public class NumberChooser {
     private Scene ncScene = new Scene(borderPane, 290, 80);
     private Button[] buttonArray = new Button[35];
     private Left left1;
-    private Label[] excludedLabelArray;
-    private int excludeIndex = 0;
+    private Label[] fixed4LabelArray;
+    private int fixedIndex = 0;
     private  String strAdd = "  ";
-    private int[] excludeNumbersArray;
+    private int[] fixed4NumbersArray;
     private HBox[] hboxArray = new HBox[7];
     
     private NumberChooser numberChooser;
@@ -41,8 +41,8 @@ public class NumberChooser {
     public NumberChooser(Left left){
         
         this.left1 = left;
-        this.excludeNumbersArray = left1.getExcludedNumbersArray();
-        this.excludedLabelArray = left1.getExcludedLabelArray();
+        this.fixed4NumbersArray = left1.get4FixedNumbersArray();
+        this.fixed4LabelArray = left1.getFixed4LabelArray();
         this.numberChooser = left1.getNumberChooser();
         
     }
@@ -93,7 +93,7 @@ public class NumberChooser {
     //addes the hboxes to the window and sets some settings and properties
     public void initNumberChooser(int index){
         
-        excludeIndex = index;
+        fixedIndex = index;
         
         numberChooserStage.setTitle("Välj nummer!");
         
@@ -107,7 +107,7 @@ public class NumberChooser {
         
         numberChooserStage.setScene(ncScene);
         
-        addExcludeButtonListener();
+        addFixedNumberButtonListener();
         
     }
     
@@ -120,7 +120,7 @@ public class NumberChooser {
     //sends the index of the button clicked to the method that 
     //handles enabling and disabling of the numbers that the user
     //wants to exclude
-    public void addExcludeButtonListener(){
+    public void addFixedNumberButtonListener(){
 	     
         for(int x = 0 ; x < buttonArray.length ; x++){
                 
@@ -137,10 +137,10 @@ public class NumberChooser {
                             else {
                                 strAdd = "" + Integer.toString(loopIndex+1) + " ";
                             }
-                            excludedLabelArray[excludeIndex].setText(strAdd);
-                            setExcludeNumberInNumberArrayAndDisable(excludeIndex, loopIndex);
+                            fixed4LabelArray[fixedIndex].setText(strAdd);
+                            setExcludeNumberInNumberArrayAndDisable(fixedIndex, loopIndex);
                             
-                            //this.left1.getRan6Rows().setRanButtonEnabling();
+                            this.left1.getRan11Lottorows().setRanButtonEnabling();
                             
                             numberChooserStage.close();
                         }
@@ -160,13 +160,13 @@ public class NumberChooser {
     public void setExcludeNumberInNumberArrayAndDisable(int exIndex, int number){
         
         int a = 0;
-        a = excludeNumbersArray[exIndex];
+        a = fixed4NumbersArray[exIndex];
         
         if (a != -1){
             buttonArray[a].setDisable(false);
         }
         
-        excludeNumbersArray[exIndex] = number;
+        fixed4NumbersArray[exIndex] = number;
         buttonArray[number].setDisable(true);
     }
     

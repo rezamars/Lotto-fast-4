@@ -9,6 +9,7 @@ import Graphic.Center;
 import Graphic.Left;
 import Graphic.Right;
 import Graphic.Top;
+import Model.Ran11LottoRows;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
@@ -27,6 +28,8 @@ public class Controller extends Application {
     private Center center = new Center();
     private Left left = new Left(right,center);
     
+    private Ran11LottoRows ran11LottoRows;
+    
     
     @Override
     public void start(Stage primaryStage) {
@@ -42,6 +45,10 @@ public class Controller extends Application {
         
         
         View v = new View(primaryStage, top, left, center, right);
+        
+        ran11LottoRows = new Ran11LottoRows(right, left, center);
+        
+        left.setRan11RowsReference(ran11LottoRows);
         
         
         

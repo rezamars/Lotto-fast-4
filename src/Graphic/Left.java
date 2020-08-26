@@ -6,6 +6,7 @@
 package Graphic;
 
 
+import Model.Ran11LottoRows;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -35,8 +36,8 @@ public class Left extends VBox{
     
     private HBox[] hboxLabelArray = new HBox[4];
     private Label[] rowNumberlabelArray = new Label[4];
-    private Label[] excludedLabelArray = new Label[4];
-    private int[] excludedNumbersArray = new int[4];
+    private Label[] fixed4LabelArray = new Label[4];
+    private int[] fixed4NumbersArray = new int[4];
     
     private Spinner spinner = new Spinner();
     private Slider slider = new Slider();
@@ -51,6 +52,7 @@ public class Left extends VBox{
     
     private Button ranButton;
     private Button clearButton;
+    private Ran11LottoRows ran11LottoRows;
     
     
     public Left(Right right, Center center){
@@ -103,11 +105,11 @@ public class Left extends VBox{
         }
         
         //create 4 objects of the labels for excluded numbers
-        for(int x = 0 ; x < excludedLabelArray.length ; x++){
-            excludedLabelArray[x] = new Label();
-            excludedLabelArray[x].setText("     ");
-            excludedLabelArray[x].setFont(labelFont);
-            excludedNumbersArray[x] = (-1);
+        for(int x = 0 ; x < fixed4LabelArray.length ; x++){
+            fixed4LabelArray[x] = new Label();
+            fixed4LabelArray[x].setText("     ");
+            fixed4LabelArray[x].setFont(labelFont);
+            fixed4NumbersArray[x] = (-1);
         }
         
         
@@ -120,7 +122,7 @@ public class Left extends VBox{
         //add the 4 buttons to the hboxes
         for(int i = 0 ; i < hboxLabelArray.length ; i++){
             hboxLabelArray[i].getChildren().add(rowNumberlabelArray[i]);
-            hboxLabelArray[i].getChildren().add(excludedLabelArray[i]);
+            hboxLabelArray[i].getChildren().add(fixed4LabelArray[i]);
             if (i == 0){
                 hboxLabelArray[i].getChildren().add(chooseNumberbutton[0]);
             }
@@ -135,7 +137,7 @@ public class Left extends VBox{
             }
             //setting color for the rownumbers and excluded labels
             rowNumberlabelArray[i].setStyle("-fx-border-color: yellow;");
-            excludedLabelArray[i].setStyle("-fx-border-color: yellow;");
+            fixed4LabelArray[i].setStyle("-fx-border-color: yellow;");
         }
         
        chooseButtonListener();
@@ -143,6 +145,12 @@ public class Left extends VBox{
        this.getChildren().addAll(hboxLabelArray);
         
        numberChooser.initButtonArray();
+    }
+    
+    public void setRan11RowsReference(Ran11LottoRows ran11LottoRows1){
+        
+        this.ran11LottoRows = ran11LottoRows1;
+        
     }
     
     //adding listeners for the 4 choose-number buttons
@@ -168,17 +176,20 @@ public class Left extends VBox{
     }
     
     
-    public Label[] getExcludedLabelArray(){
-        return this.excludedLabelArray;
+    public Label[] getFixed4LabelArray(){
+        return this.fixed4LabelArray;
     }
     
-    public int[] getExcludedNumbersArray(){
-        return this.excludedNumbersArray;
+    public int[] get4FixedNumbersArray(){
+        return this.fixed4NumbersArray;
     }
-    
     
     public NumberChooser getNumberChooser(){
         return this.numberChooser;
+    }
+ 
+    public Ran11LottoRows getRan11Lottorows(){
+        return this.ran11LottoRows;
     }
     
 }
