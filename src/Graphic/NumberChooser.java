@@ -73,17 +73,6 @@ public class NumberChooser {
             else if((y>29) && (y<35)){
                 hboxArray[3].getChildren().add(buttonArray[y]);
             }
-            /*
-            else if((y>39) && (y<50)){
-                hboxArray[4].getChildren().add(buttonArray[y]);
-            }
-            else if((y>49) && (y<60)){
-                hboxArray[5].getChildren().add(buttonArray[y]);
-            }
-            else if((y>59) && (y<70)){
-                hboxArray[6].getChildren().add(buttonArray[y]);
-            }
-            */
             
             buttonArray[y].setFont(buttonFont);
         }

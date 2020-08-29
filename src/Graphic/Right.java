@@ -26,6 +26,7 @@ import javafx.stage.Screen;
 //the right-object of the borderpane
 public class Right extends VBox{
     
+    private Button explanationButton = new Button("Förklaring ???");
     private Button ranButton = new Button("Slumpa 11 rader");
     
     private HBox spaceHbox1 = new HBox();
@@ -47,8 +48,17 @@ public class Right extends VBox{
         Rectangle2D primaryScreenBounds = Screen.getPrimary().getVisualBounds();
         double width = primaryScreenBounds.getWidth();
         
+        
+        
+        explanationButton.setStyle("-fx-text-fill: orange;");
+        Font explButtonFont ;
+        explButtonFont = Font.font("Arial", FontWeight.BOLD, 15);
+        explanationButton.setFont(explButtonFont);
+        this.getChildren().add(explanationButton);
+        
         //HBox that acts to fill up space
         spaceHbox1.setPadding(new Insets(10, 10, 100, (width/8)));
+        
         this.getChildren().add(spaceHbox1);
         
         spaceHbox2.setPadding(new Insets(10, 10, 10, (width/8)));
@@ -85,6 +95,10 @@ public class Right extends VBox{
     
     public Button getClearButton(){
         return this.clearButton;
+    }
+    
+    public Button getExplanationButton(){
+        return this.explanationButton;
     }
     
 }

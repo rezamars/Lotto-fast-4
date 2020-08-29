@@ -7,8 +7,10 @@ package Lotto;
 
 import Graphic.Center;
 import Graphic.Left;
+import Graphic.QuestionWindow;
 import Graphic.Right;
 import Graphic.Top;
+import Model.Clear;
 import Model.Ran11LottoRows;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
@@ -29,6 +31,9 @@ public class Controller extends Application {
     private Left left = new Left(right,center);
     
     private Ran11LottoRows ran11LottoRows;
+    private QuestionWindow questionWindow = new QuestionWindow(right);
+    
+    private Clear clear = new Clear(right, left, center);
     
     
     @Override
@@ -50,7 +55,9 @@ public class Controller extends Application {
         
         left.setRan11RowsReference(ran11LottoRows);
         
+        questionWindow.addQuestionButtonListener();
         
+        clear.addClearButtonListener();
         
     }
 

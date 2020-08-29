@@ -228,10 +228,10 @@ public class Ran11LottoRows {
         //System.out.println("---");
         
         for(int i = 0 ; i < 2 ; i++){
-            System.out.println(twoDublicatesArray[i]);
+            //System.out.println(twoDublicatesArray[i]);
         }
         
-        System.out.println("------------------------");
+        //System.out.println("------------------------");
         
         fillTheRestOfLottoArray();
         
@@ -339,141 +339,6 @@ public class Ran11LottoRows {
         //sortArray11();
     }
     
-    public void fixTheRows(){
-        
-        //making sure the 4 excluded numbers are not in the lottoNumberArray-array
-        //making sure there is no dublicates
-        
-        
-        /*
-        int x= 0;
-        while( x < 11 ){  
-        for(int i = 0 ; i<11 ; i++){
-            for(int y = 0 ; y<7 ; y++){    
-        
-            for(int j = 0 ; j<7 ; j++){ 
-                /*
-                for(int t = 0 ; t<4 ; t++){ 
-                    if ((lottoNumberArray[i][j] == ((fixed4NumbersArray[t])+1))){
-                    
-                        int ra = ran.nextInt(35);
-                        //lottoNumberArray[i][j] = (ra + 1);
-                        //x = 0;
-                        
-                    }
-                }
-                
-                int xynumber = lottoNumberArray[x][y];
-                int ijnumber = lottoNumberArray[i][j];
-                
-                if ((lottoNumberArray[x][y] == lottoNumberArray[i][j]) && (i!=x) && (y!=j)){
-                    int ra = ran.nextInt(35);
-                    lottoNumberArray[i][j] = (ra + 1);
-                    x = 0;
-                    i = 0;
-                    y = 0;
-                    j = 0;
-                    
-                }
-            }   
-        }   
-        }
-        x++;
-        }
-        */
-        
-        //countAmountOfEachNumber();
-        
-    }
-    
-    public void countAmountOfEachNumber(){
-        
-        
-        
-        //replace();
-         
-         
-        for(int i = 0 ; i < 35 ; i++){
-           //System.out.println("i:" + i + " - amount: " + amountOfEachNumber[i]);
-        }
-         
-        String orgStr = "10,3";
-        int av = 1;
-        String Str1 = "aa";
-        String Str2 = "bb";
-        
-        int to = -1;        
-        to = orgStr.indexOf(",");
-        String str1 = "";
-        String str2 = "";
-        str1 = orgStr.substring(0, to);
-        str2 = orgStr.substring(to+1);
-        
-        //System.out.println("str1: " + str1 + "---- str2: " + str2);
-        
-        
-        for(int i = 0 ; i < 11 ; i++){
-            for(int r = 0 ; r < 7 ; r++){
-                //System.out.println("i:" + i + ", r:" + r + " - " + savingIndexesArray[i][r]);
-            }
-        }
-        
-        /*
-        int a = 0;
-        while( a < 11 ){  
-            for(int q = 0 ; q < 11 ; q++){
-                for(int w = 0 ; w < 7 ; w++){
-                    for(int e = 0 ; e < 7 ; e++){
-                        if ((lottoNumberArray[q][w] == lottoNumberArray[q][e]) && (w!=e)){
-                            int switchNumber = 0;
-                            switchNumber = lottoNumberArray[q][w];
-                            lottoNumberArray[q][w] = lottoNumberArray[q][5];
-                            lottoNumberArray[q][5] = switchNumber;
-                            a = 0;
-                            /*
-                            int ra = ran.nextInt(35);
-                            lottoNumberArray[q][w] = (ra + 1);
-                            a = 0;
-                            
-                        }
-                    }
-                }
-            }
-            a++;
-        }
-        */
-    }
-    
-    public void makingSure(){
-        
-        
-        
-        ArrayList<Integer> zeroList = new ArrayList<Integer>();
-        ArrayList<Integer> oneList = new ArrayList<Integer>();
-        ArrayList<Integer> twoList = new ArrayList<Integer>();
-        ArrayList<Integer> moreThan2List = new ArrayList<Integer>();
-        
-        for(int i = 0 ; i < 35 ; i++){
-            if(amountOfEachNumber[i] == 0){
-                zeroList.add(i);
-            }
-            else if(amountOfEachNumber[i] == 1){
-                oneList.add(i);
-            }
-            else if(amountOfEachNumber[i] == 2){
-                twoList.add(i);
-            }
-            else if(amountOfEachNumber[i] > 2){
-                moreThan2List.add(i);
-            }
-        }
-        
-        
-        for(int i = 0 ; i < moreThan2List.size() ; i++){
-            
-        }
-        
-    }
     
     
     public void printTheflagArray(){
@@ -491,37 +356,37 @@ public class Ran11LottoRows {
             if((i>-1 && i<7)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>6 && i<14)){
                 BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>13 && i<21)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>20 && i<28)){
                 BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>27 && i<35)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>34 && i<42)){
                 BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>41 && i<49)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>48 && i<56)){
                 BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
@@ -531,31 +396,32 @@ public class Ran11LottoRows {
             else if((i>55 && i<63)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>62 && i<70)){
                 BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
             else if((i>69 && i<77)){
                 BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
                 Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
+                //lottoLabelArray[i].setBackground(background);
             }
-            //BackgroundFill background_fill = new BackgroundFill(Color.LIGHTBLUE,  CornerRadii.EMPTY, Insets.EMPTY); 
-            //Background background = new Background(background_fill);
-            //lottoLabelArray[i].setBackground(background);
+            BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY); 
+            Background background = new Background(background_fill);
+            lottoLabelArray[i].setBackground(background);
             //lottoLabelArray[i].setStyle("-fx-border-color: red;");
+            lottoLabelArray[i].setStyle("-fx-border-color: black;");
             lottoLabelArray[i].setTextFill(Color.BLACK);
         }
         
         for(int i = 0 ; i < 77 ; i++){
             for(int t = 0 ; t<4 ; t++){ 
                 if(lottoNumberArray[i] == fixed4NumbersArray[t]+1){
-                    BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY); 
+                    BackgroundFill background_fill = new BackgroundFill(Color.LIGHTBLUE,  CornerRadii.EMPTY, Insets.EMPTY); 
                     Background background = new Background(background_fill);
-                    //lottoLabelArray[i].setBackground(background);
+                    lottoLabelArray[i].setBackground(background);
                     //lottoLabelArray[i].setStyle("-fx-border-color: pink;");
                     //lottoLabelArray[i].setTextFill(Color.GREEN);
                 }
