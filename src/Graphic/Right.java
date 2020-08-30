@@ -45,7 +45,7 @@ public class Right extends VBox{
         double width = primaryScreenBounds.getWidth();
         
         
-        
+        //Setting font and settings of the explanation-button
         explanationButton.setStyle("-fx-text-fill: orange;");
         Font explButtonFont ;
         explButtonFont = Font.font("Arial", FontWeight.BOLD, 20);
@@ -58,9 +58,7 @@ public class Right extends VBox{
         
         this.getChildren().add(spaceHbox1);
         
-        spaceHbox2.setPadding(new Insets(10, 10, 10, (width/8)));
         
-       
         //setting properties and font of ranbutton
         ranButton.setDisable(true);
         ranButton.setStyle("-fx-text-fill: blue;");
@@ -68,6 +66,9 @@ public class Right extends VBox{
         countButtonFont = Font.font("Arial", FontWeight.BOLD, 20);
         ranButton.setFont(countButtonFont);
         ranButton.setMinSize(100, 40);
+        
+        //HBox that acts to fill up space
+        spaceHbox2.setPadding(new Insets(10, 10, 10, (width/8)));
         
         //add items to the screen
         this.getChildren().add(ranButton);

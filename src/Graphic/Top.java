@@ -47,10 +47,10 @@ public class Top extends HBox{
             return;
         }
         
-        //set the image to the grafic
+        //set the image to the graphic
         lottoImageLabel.setGraphic(new ImageView(image));
         
-        //Font settings
+        //Font and colour settings
         Font font ;
         font = Font.font("Arial", FontWeight.BOLD, 40);
         lottoLabel.setFont(font);

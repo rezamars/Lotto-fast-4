@@ -47,7 +47,7 @@ public class Controller extends Application {
         primaryStage.setWidth((primaryScreenBounds.getWidth())/1.3);
         primaryStage.setHeight((primaryScreenBounds.getHeight())/1.1);
         
-        
+        //Create object of the view and sending references
         View v = new View(primaryStage, top, left, center, right);
         
         ran11LottoRows = new Ran11LottoRows(right, left, center);

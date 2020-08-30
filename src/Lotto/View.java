@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  *
  * @author Reza
  */
-//this class creates the stage and sets the layout and adds the 4 layout objects
+//this class creates the stage and sets the layout of the scene and adds the 4 layout objects 
 public class View {
     
     private BorderPane borderPane = new BorderPane();

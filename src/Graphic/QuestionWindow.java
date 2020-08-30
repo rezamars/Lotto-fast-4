@@ -20,6 +20,7 @@ import javafx.stage.Stage;
  *
  * @author Reza
  */
+//This class opens a new window(Stage) that contains a short description about this program
 public class QuestionWindow {
     
     private BorderPane borderPane = new BorderPane();
@@ -41,7 +42,7 @@ public class QuestionWindow {
         questionStage.setTitle("Förklaring!");
         questionStage.setScene(ncScene);
         
-        
+        //Description-text
         String explanationText1 = "\nLottorads-generering:";
         String explanationText2 = "\nDetta program genererar 11 lottorader. \nAnvändaren väljer 4 fasta nummer "
                 + "som är fasta nummer i \nalla 11 rader. De resterande numren (3 nummer i alla rader) \ni alla raderna slumpas "
@@ -49,6 +50,7 @@ public class QuestionWindow {
                 + "platser. På så sätt är alla \nnumren (1 till 35) garanterad med minst 1 gång. \nDet finns 2 undantag på den "
                 + "11:e raden som innehåller 2 \nslumpvis valda nummer som är dubletter." ;
         
+        //Setting fonts and text
         Font text1Font ;
         text1Font = Font.font("Arial", FontWeight.BOLD, 20);
         explanationLabel1.setFont(text1Font);
@@ -66,21 +68,19 @@ public class QuestionWindow {
         topd.setSpacing(1);
         borderPane.setTop(topd);
         
+        //Adding the labels to the graphic
         topd.getChildren().add(explanationLabel1);
         topd.getChildren().add(explanationLabel2);
     }
     
-    
+    //Shows or opens the window
     public void showExplanationWindow(){
         
         questionStage.show();
     }
     
     
-    //adds listener to the buttons in numberchooser
-    //sends the index of the button clicked to the method that 
-    //handles enabling and disabling of the numbers that the user
-    //wants to exclude
+    //adds listener to the explanation-button
     public void addQuestionButtonListener(){
 	     
 	        explanationButton.setOnMouseClicked(event -> {

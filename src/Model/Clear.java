@@ -52,8 +52,7 @@ public class Clear {
     }
     
     //adds listener to the clear-button
-    //resets the excluded numbers
-    //and enables all the numbers to choose
+    //resets the fixed numbers and enables all the numbers to choose
     public void addClearButtonListener(){
         
         clearButton.setOnAction(e -> {
@@ -76,7 +75,7 @@ public class Clear {
             
     }
     
-    //clears the labels for the kenorows
+    //clears the labels for the lottorows
     public void clearLottoRows(){
         
         for(int w = 0 ; w < lottoLabelArray.length ; w++){

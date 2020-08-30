@@ -35,7 +35,7 @@ public class Center extends VBox{
     
     public Center(){
         
-        
+        //Basic settings of the center-part
         this.setPadding(new Insets(15, 10, 10, 100));  
         this.setSpacing(1);
         
@@ -65,7 +65,7 @@ public class Center extends VBox{
         Font labelFont ;
         labelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
-        //objects of rownumbers, color, text, font
+        //objects of 11 rownumbers, setting color, text, font
         for(int x = 0 ; x < rowNumberlabelArray.length ; x++){
             rowNumberlabelArray[x] = new Label();
             BackgroundFill background_fill = new BackgroundFill(Color.ORANGE,  CornerRadii.EMPTY, Insets.EMPTY); 
@@ -89,7 +89,7 @@ public class Center extends VBox{
         Font numberLabelFont ;
         numberLabelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
-        //creating objects of the lottoNumberArray labelarray and setting properties
+        //creating objects of the lottoNumberLabel-array (77 labels) and setting properties
         for(int w = 0 ; w < lottoLabelArray.length ; w++){
             lottoLabelArray[w] = new Label();
             lottoLabelArray[w].setAlignment(Pos.TOP_CENTER);
@@ -104,7 +104,7 @@ public class Center extends VBox{
         int hboxIndex = 0;
         int lottoRowIndex = 0;
         
-        //filling the keno rows-part of the grafics of center
+        //filling the labels, the rownumberlabels and lottonumberlabels
         for (int addIndex = 0 ; addIndex < totalLabels ; addIndex++ ){
             switch (squareNumber) {
                 case 0:
@@ -156,7 +156,7 @@ public class Center extends VBox{
             
         }
         
-        
+        //adding the hbox-array to the graphic-part
         this.getChildren().addAll(hboxLabelArray);
        
     }

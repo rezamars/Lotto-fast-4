@@ -21,7 +21,7 @@ import javafx.scene.paint.Color;
  *
  * @author Reza
  */
-//this class handles the generation (randomizing) of the 6 kenorows
+//this class handles the randomizing of the 11 lottorows with 4 fixed numbers in all 11 rows
 public class Ran11LottoRows {
     
     private Right right1;
@@ -52,7 +52,9 @@ public class Ran11LottoRows {
         addRanButtonListener();
     }
     
-    //adds listener to the ran-button, starts counting at click
+    //adds listener to the ran-button, starts filling the 11 lottorows with 4 fixed numbers,
+    //then, randomizes the rest (3 other numbers in all 11), making sure that all 1 to 35 numbers 
+    //are included, also 2 dublettes in row 11, then it sorts all 11 rows and sets colours to all lottolabels
     public void addRanButtonListener(){
         
         ranButton.setOnAction(e -> {
@@ -65,7 +67,7 @@ public class Ran11LottoRows {
             
     }
     
-    //handles the counting of amount of numbers chosen by the user
+    //handles the counting of amount of fixednumbers chosen by the user
     //if 4 numbers chosen, the ranbutton becomes clickable
     public void setRanButtonEnabling(){
         
@@ -85,12 +87,15 @@ public class Ran11LottoRows {
         }
     }
     
+    //fills the lottonumber-array with the 4 fixed numbers chosen by the user
     public void fillTheLottoArrayWith0AndThefixedNumbers(){
         
         for (int i = 0 ; i < 77 ; i++){
             lottoNumberArray[i] = 0;
         }
         
+        //2 vars that specifies the first and last position of the fixed numbers 
+        //in all 11 lotto-rows
         int fixedNumberFromIndex = 0;
         int fixedNumberUntilIndex = 0;
         
@@ -141,6 +146,7 @@ public class Ran11LottoRows {
                 fixedNumberUntilIndex = 73;
             }
             
+            //filling the 4 fixed numbers of all rows
             int loopIter = 0;
             for(int k = fixedNumberFromIndex ; k <= fixedNumberUntilIndex ; k++){
                 lottoNumberArray[k] = (fixed4NumbersArray[loopIter])+1;
@@ -152,9 +158,8 @@ public class Ran11LottoRows {
         
     }
     
-    //method for filling the lottoNumberArray-array
-    //and making sure that every number (1-70) are represented once
-    //and that 4 numbers are excluded (chosen by the user)
+    //filling (at randomized positions) the arrayOf31 with all numbers (1-35) except the 4 fixed numbers,
+    //also randomizing the 2 dublettes in row 11
     public void randomize11Rows(){
         
         for (int i = 0 ; i < arrayOf31.length ; i++){
@@ -210,6 +215,8 @@ public class Ran11LottoRows {
         
     }
     
+    //filling the position 5 till 7 in the lottonumber-array with the randomized arrayOf31 
+    //and the 2 dublettes in row 11
     public void fillTheRestOfLottoArray(){
         
         int randomNumberFromIndex = 0;
@@ -448,7 +455,8 @@ public class Ran11LottoRows {
         }
     }
     
-    //
+    //Setting label-background colour, pink for the randomized numbers-labels
+    //and lightblue for the fixed numbers-label
     public void setLottoLabelColours(){
         
         
@@ -476,7 +484,8 @@ public class Ran11LottoRows {
     }
     
     
-    
+    //Method for checking which numbers are included or excluded in the lottonumbers-array
+    //Only for debugging purpose
     public void setFlagArray(){
     
         for(int f = 0 ; f < 35 ; f++){
@@ -498,7 +507,8 @@ public class Ran11LottoRows {
     }
     
     
-    
+    //Writes the boolean-status of the numberFlagArray
+    //Only for debugging purpose
     public void printTheflagArray(){
         for(int f = 0 ; f < 35 ; f++){
             System.out.println("FlagArray: " + numberFlagArray[f]);
@@ -508,7 +518,7 @@ public class Ran11LottoRows {
     
     
     
-    //filling the labels of the randomized kenorows
+    //filling the labels of the randomized lottorows including 4 fixed numbers in every row
     public void fillThe11RowsInLabels(){
         
         int arrayIndex = 0;

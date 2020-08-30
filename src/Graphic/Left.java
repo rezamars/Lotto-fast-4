@@ -10,10 +10,7 @@ import Model.Ran11LottoRows;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Spinner;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
@@ -67,6 +64,7 @@ public class Left extends VBox{
         Font headingFont ;
         headingFont = Font.font("Arial", FontWeight.BOLD, 25);
         
+        //settings of the headinglabel and adding it to the scene
         headingLabel.setFont(headingFont);
         headingLabel.setTextFill(Color.RED);
         headingLabel.setMinSize(100, 40);
@@ -102,17 +100,18 @@ public class Left extends VBox{
             rowNumberlabelArray[z].setMinSize(30, 40);
         }
         
-        //create 4 objects of the labels for excluded numbers
+        //create 4 objects of the labels for the fixed numbers
         for(int x = 0 ; x < fixed4LabelArray.length ; x++){
             fixed4LabelArray[x] = new Label();
             fixed4LabelArray[x].setText("     ");
             fixed4LabelArray[x].setFont(labelFont);
             fixed4LabelArray[x].setMinSize(30, 40);
+            //filling the fixednumbersarray with -1, so that it do not contain null
             fixed4NumbersArray[x] = (-1);
         }
         
         
-        //create 4 buttons to click for the user to choose the excluded numbers
+        //create 4 buttons to click for the user to choose the fixed numbers
         for (int j = 0 ; j < chooseNumberbutton.length ; j++){
             chooseNumberbutton[j] = new Button();
             chooseNumberbutton[j].setText("Välj nummer");
@@ -135,7 +134,8 @@ public class Left extends VBox{
             else if (i == 3){
                 hboxLabelArray[i].getChildren().add(chooseNumberbutton[3]);
             }
-            //setting color for the rownumbers and excluded labels
+            
+            //setting color for the rownumbers and the fixednumber-labels
             rowNumberlabelArray[i].setStyle("-fx-border-color: yellow;");
             fixed4LabelArray[i].setStyle("-fx-border-color: yellow;");
         }
@@ -144,9 +144,11 @@ public class Left extends VBox{
         
        this.getChildren().addAll(hboxLabelArray);
         
+       //calling to initiate the numberchooser-window with buttons
        numberChooser.initButtonArray();
     }
     
+    //a method for recieving reference to this classe's ran11LottoRows-variable
     public void setRan11RowsReference(Ran11LottoRows ran11LottoRows1){
         
         this.ran11LottoRows = ran11LottoRows1;

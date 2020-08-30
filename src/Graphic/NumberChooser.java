@@ -20,8 +20,8 @@ import javafx.stage.Stage;
  *
  * @author Reza
  */
-//this class handles the window that the user can click which numbers
-//he or she choses to exclude from the 70 numbers
+//this class handles the window that the user can click which 4 fixed numbers
+//he or she choses to have in all the 11 rows from the 35 numbers
 public class NumberChooser {
     
     private BorderPane borderPane = new BorderPane();
@@ -47,6 +47,8 @@ public class NumberChooser {
         
     }
     
+    //Cretaes objects of the Hbox-array and the buttonarray and adds the buttons to the hboxes
+    //It also sets font and sizes
     public void initButtonArray(){
         
         //create new objects of the hboxes
@@ -105,6 +107,7 @@ public class NumberChooser {
         
     }
     
+    //Visualizes the window
     public void showNumberChooser(){
         numberChooserStage.show();
     }
@@ -113,7 +116,8 @@ public class NumberChooser {
     //adds listener to the buttons in numberchooser
     //sends the index of the button clicked to the method that 
     //handles enabling and disabling of the numbers that the user
-    //wants to exclude
+    //wants to have as fixed numbers
+    //When the user choses the number, the window closes
     public void addFixedNumberButtonListener(){
 	     
         for(int x = 0 ; x < buttonArray.length ; x++){
@@ -149,7 +153,7 @@ public class NumberChooser {
         }
     }     
     
-    //saves the number that the user want to exclude from the kenorows
+    //saves the number that the user want to have as fixed number 
     //enables and disables the numbers the user chooses
     public void setFixedNumbersInNumberArrayAndDisable(int exIndex, int number){
         
