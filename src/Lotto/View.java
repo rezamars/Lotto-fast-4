@@ -41,6 +41,8 @@ public class View {
         borderPane.setCenter(center);
         borderPane.setRight(right);
         
+        //this.top.setPrefSize(500, 500);
+        
         //scene settings
         Scene scene = new Scene(borderPane, 300, 250);
         

@@ -26,7 +26,7 @@ import javafx.stage.Screen;
 //the right-object of the borderpane
 public class Right extends VBox{
     
-    private Button explanationButton = new Button("Förklaring ???");
+    private Button explanationButton = new Button("Förklaring ?");
     private Button ranButton = new Button("Slumpa 11 rader");
     
     private HBox spaceHbox1 = new HBox();
@@ -41,7 +41,7 @@ public class Right extends VBox{
         
         this.setAlignment(Pos.TOP_CENTER);
         
-        this.setPadding(new Insets(10, 10, 10, 10));  
+        this.setPadding(new Insets(75, 10, 10, 10));  
         this.setSpacing(1);
         
         //get screenresolution
@@ -52,8 +52,9 @@ public class Right extends VBox{
         
         explanationButton.setStyle("-fx-text-fill: orange;");
         Font explButtonFont ;
-        explButtonFont = Font.font("Arial", FontWeight.BOLD, 15);
+        explButtonFont = Font.font("Arial", FontWeight.BOLD, 20);
         explanationButton.setFont(explButtonFont);
+        explanationButton.setMinSize(100, 40);
         this.getChildren().add(explanationButton);
         
         //HBox that acts to fill up space
@@ -68,8 +69,9 @@ public class Right extends VBox{
         ranButton.setDisable(true);
         ranButton.setStyle("-fx-text-fill: blue;");
         Font countButtonFont ;
-        countButtonFont = Font.font("Arial", FontWeight.BOLD, 15);
+        countButtonFont = Font.font("Arial", FontWeight.BOLD, 20);
         ranButton.setFont(countButtonFont);
+        ranButton.setMinSize(100, 40);
         
         //add items to the screen
         this.getChildren().add(ranButton);
@@ -77,9 +79,10 @@ public class Right extends VBox{
           
         //setting font and color of clearbutton
         Font clearButtonFont ;
-        clearButtonFont = Font.font("Arial", FontWeight.BOLD, 15);
+        clearButtonFont = Font.font("Arial", FontWeight.BOLD, 20);
         clearButton.setFont(clearButtonFont);
         clearButton.setStyle("-fx-text-fill: purple;");
+        clearButton.setMinSize(100, 40);
         
         spaceHbox3.setPadding(new Insets(65, 10, 10, (width/8)));
         

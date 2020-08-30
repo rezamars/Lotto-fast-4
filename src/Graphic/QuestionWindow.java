@@ -48,7 +48,7 @@ public class QuestionWindow {
                 + "som är fasta nummer i \nalla 11 rader. De resterande numren (3 nummer i alla rader) \ni alla raderna slumpas "
                 + "fram av programmet där \nde övriga numren (de resterande 31 numren) är med \n1 gång på slumpvis valda "
                 + "platser. På så sätt är alla \nnumren (1 till 35) garanterad med minst 1 gång. \nDet finns 2 undantag på den "
-                + "11:e raden som innehåller \n2 slumpvis valda nummer som \när dubletter." ;
+                + "11:e raden som innehåller 2 \nslumpvis valda nummer som är dubletter." ;
         
         Font text1Font ;
         text1Font = Font.font("Arial", FontWeight.BOLD, 20);

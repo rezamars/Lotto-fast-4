@@ -69,10 +69,11 @@ public class Left extends VBox{
         this.setSpacing(1);
         
         Font headingFont ;
-        headingFont = Font.font("Arial", FontWeight.BOLD, 15);
+        headingFont = Font.font("Arial", FontWeight.BOLD, 25);
         
         headingLabel.setFont(headingFont);
         headingLabel.setTextFill(Color.RED);
+        headingLabel.setMinSize(100, 40);
         this.getChildren().add(headingLabel);
         
         //a HBox for filling up space
@@ -81,7 +82,7 @@ public class Left extends VBox{
         this.getChildren().add(spaceHbox);
         
         Font labelFont ;
-        labelFont = Font.font("Arial", FontWeight.BOLD, 15);
+        labelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
         //create objects of Hbox-array and setting properties
         for(int z = 0 ; z < hboxLabelArray.length ; z++){
@@ -90,6 +91,7 @@ public class Left extends VBox{
             hboxLabelArray[z].setSpacing(25);
             hboxLabelArray[z].setFillHeight(true); 
             hboxLabelArray[z].autosize();
+            //hboxLabelArray[z].setMinSize(200, 80);
             hboxLabelArray[z].setAlignment(Pos.CENTER_LEFT);
             
         }
@@ -102,6 +104,7 @@ public class Left extends VBox{
             BackgroundFill background_fill = new BackgroundFill(Color.LIGHTBLUE,  CornerRadii.EMPTY, Insets.EMPTY); 
             Background background = new Background(background_fill);
             rowNumberlabelArray[z].setBackground(background);
+            rowNumberlabelArray[z].setMinSize(30, 40);
         }
         
         //create 4 objects of the labels for excluded numbers
@@ -109,6 +112,7 @@ public class Left extends VBox{
             fixed4LabelArray[x] = new Label();
             fixed4LabelArray[x].setText("     ");
             fixed4LabelArray[x].setFont(labelFont);
+            fixed4LabelArray[x].setMinSize(30, 40);
             fixed4NumbersArray[x] = (-1);
         }
         
@@ -117,6 +121,7 @@ public class Left extends VBox{
         for (int j = 0 ; j < chooseNumberbutton.length ; j++){
             chooseNumberbutton[j] = new Button();
             chooseNumberbutton[j].setText("Välj nummer");
+            chooseNumberbutton[j].setMinSize(30, 40);
         }
         
         //add the 4 buttons to the hboxes

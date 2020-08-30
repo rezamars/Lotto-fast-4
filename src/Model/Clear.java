@@ -8,8 +8,13 @@ package Model;
 import Graphic.Center;
 import Graphic.Left;
 import Graphic.Right;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -67,16 +72,17 @@ public class Clear {
             }
             for(int i = 0 ; i < 77 ; i++){
                 lottoLabelArray[i].setStyle("-fx-border-color: none;");
+                lottoLabelArray[i].setBackground(null);
             }
             
             ranButton.setDisable(true);
-            clearKenoRows();
+            clearLottoRows();
         });
             
     }
     
     //clears the labels for the kenorows
-    public void clearKenoRows(){
+    public void clearLottoRows(){
         
         for(int w = 0 ; w < lottoLabelArray.length ; w++){
             lottoLabelArray[w].setText("");

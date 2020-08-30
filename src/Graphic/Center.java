@@ -36,15 +36,16 @@ public class Center extends VBox{
     public Center(){
         
         
-        this.setPadding(new Insets(10, 10, 10, 100));  
+        this.setPadding(new Insets(15, 10, 10, 100));  
         this.setSpacing(1);
         
         //set properties for headinglabel and adding it to the layout
         Font headingFont ;
-        headingFont = Font.font("Arial", FontWeight.BOLD, 20);
+        headingFont = Font.font("Arial", FontWeight.BOLD, 25);
         headingLabel.setFont(headingFont);
         headingLabel.setTextFill(Color.RED);
         headingLabel.setAlignment(Pos.TOP_CENTER);
+        headingLabel.setMinSize(100, 40);
         this.getChildren().add(headingLabel);
         
         //a Hbox added to fill up space in the layout
@@ -57,12 +58,14 @@ public class Center extends VBox{
         //create objects of Hbox-array and setting properties
         for(int z = 0 ; z < hboxLabelArray.length ; z++){
             hboxLabelArray[z] = new HBox();
-            hboxLabelArray[z].setSpacing(10);
+            hboxLabelArray[z].setSpacing(3);
             hboxLabelArray[z].setPadding(new Insets(0, 0, 10, 0));
+            //hboxLabelArray[z].setFillHeight(true); 
+            //hboxLabelArray[z].autosize();
         }
         
         Font labelFont ;
-        labelFont = Font.font("Arial", FontWeight.BOLD, 20);
+        labelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
         //objects of rownumbers, color, text, font
         for(int x = 0 ; x < rowNumberlabelArray.length ; x++){
@@ -70,6 +73,7 @@ public class Center extends VBox{
             BackgroundFill background_fill = new BackgroundFill(Color.ORANGE,  CornerRadii.EMPTY, Insets.EMPTY); 
             Background background = new Background(background_fill);
             rowNumberlabelArray[x].setBackground(background);
+            rowNumberlabelArray[x].setMinSize(30, 28);
             
             if (x < 9){
                 rowNumberlabelArray[x].setText(" " + Integer.toString((x+1)) + " ");
@@ -85,7 +89,7 @@ public class Center extends VBox{
         }
         
         Font numberLabelFont ;
-        numberLabelFont = Font.font("Arial", FontWeight.BOLD, 15);
+        numberLabelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
         //creating objects of the lottoNumberArray labelarray and setting properties
         
@@ -94,6 +98,7 @@ public class Center extends VBox{
             lottoLabelArray[w].setAlignment(Pos.TOP_CENTER);
             lottoLabelArray[w].setTextFill(Color.BLUE);
             lottoLabelArray[w].setFont(numberLabelFont);
+            lottoLabelArray[w].setMinSize(30, 25);
         }
         
         

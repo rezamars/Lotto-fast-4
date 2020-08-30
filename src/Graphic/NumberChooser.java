@@ -26,7 +26,7 @@ public class NumberChooser {
     
     private BorderPane borderPane = new BorderPane();
     private Stage numberChooserStage = new Stage();
-    private Scene ncScene = new Scene(borderPane, 290, 80);
+    private Scene ncScene = new Scene(borderPane, 535, 160);
     private Button[] buttonArray = new Button[35];
     private Left left1;
     private Label[] fixed4LabelArray;
@@ -55,13 +55,17 @@ public class NumberChooser {
         }
         
         Font buttonFont ;
-        buttonFont = Font.font("Arial", FontWeight.BOLD, 10);
+        buttonFont = Font.font("Arial", FontWeight.BOLD, 20);
         
         //adding the buttons to the layout
         for (int y = 0 ; y < buttonArray.length ; y++){
             buttonArray[y] = new Button("" + (y+1) + "");
-            if(y<10){
+            if(y<9){
                 buttonArray[y].setText(" " + (y+1) + " ");
+                hboxArray[0].getChildren().add(buttonArray[y]);
+            }
+            else if(y == 9){
+                buttonArray[y].setText("" + (y+1) + "");
                 hboxArray[0].getChildren().add(buttonArray[y]);
             }
             else if((y>9) && (y<20)){
@@ -75,6 +79,7 @@ public class NumberChooser {
             }
             
             buttonArray[y].setFont(buttonFont);
+            buttonArray[y].setMinSize(35, 25);
         }
         
     }
