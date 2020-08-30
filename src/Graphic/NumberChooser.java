@@ -132,7 +132,7 @@ public class NumberChooser {
                                 strAdd = "" + Integer.toString(loopIndex+1) + " ";
                             }
                             fixed4LabelArray[fixedIndex].setText(strAdd);
-                            setExcludeNumberInNumberArrayAndDisable(fixedIndex, loopIndex);
+                            setFixedNumbersInNumberArrayAndDisable(fixedIndex, loopIndex);
                             
                             this.left1.getRan11Lottorows().setRanButtonEnabling();
                             
@@ -151,7 +151,7 @@ public class NumberChooser {
     
     //saves the number that the user want to exclude from the kenorows
     //enables and disables the numbers the user chooses
-    public void setExcludeNumberInNumberArrayAndDisable(int exIndex, int number){
+    public void setFixedNumbersInNumberArrayAndDisable(int exIndex, int number){
         
         int a = 0;
         a = fixed4NumbersArray[exIndex];

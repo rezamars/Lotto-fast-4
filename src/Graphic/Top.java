@@ -49,8 +49,6 @@ public class Top extends HBox{
         
         //set the image to the grafic
         lottoImageLabel.setGraphic(new ImageView(image));
-        //lottoImageLabel.setMaxSize(10, 10);
-        //lottoImageLabel.setMinSize(500, 500);
         
         //Font settings
         Font font ;

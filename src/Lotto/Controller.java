@@ -24,7 +24,6 @@ import javafx.stage.Stage;
 //this class is controller of the program, it contains instance variables and the main-method
 public class Controller extends Application {
     
-    
     private Top top = new Top();
     private Right right = new Right();
     private Center center = new Center();

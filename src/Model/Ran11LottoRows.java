@@ -8,7 +8,6 @@ package Model;
 import Graphic.Center;
 import Graphic.Left;
 import Graphic.Right;
-import java.util.ArrayList;
 import java.util.Random;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -17,7 +16,6 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 /**
  *
@@ -37,10 +35,6 @@ public class Ran11LottoRows {
     private Random ran = new Random();
     private  boolean[] numberFlagArray = new boolean[35];
     
-    private int[] amountOfEachNumber = new int[35];
-    
-    private int[][] savingIndexesArray= new int[11][7];;
-    
     private int[] arrayOf31 = new int[31];
     private int[] twoDublicatesArray = new int[2];
     
@@ -53,11 +47,6 @@ public class Ran11LottoRows {
         this.ranButton = right1.getRanButton();
         this.lottoLabelArray = center1.getLottoLabelArray();
         this.fixed4NumbersArray = left1.get4FixedNumbersArray();
-        
-        for(int i = 0 ; i < 35 ; i++){
-            amountOfEachNumber[i] = 0;
-        }
-        
         
         
         addRanButtonListener();
@@ -102,12 +91,9 @@ public class Ran11LottoRows {
             lottoNumberArray[i] = 0;
         }
         
-        //int rowSquareIndex = 0;
-        //int rowNumber = 1;
         int fixedNumberFromIndex = 0;
         int fixedNumberUntilIndex = 0;
-        //int x = 0;
-        //while ( x < 77){
+        
         for(int x = 0 ; x<77 ; x+=7){
             
             if ( x == 0){
@@ -188,7 +174,6 @@ public class Ran11LottoRows {
         }
         
         
-        
         int x= 0;
         while( x<arrayOf31.length ){
             
@@ -206,10 +191,6 @@ public class Ran11LottoRows {
         }
         
         
-        for(int u = 0 ; u < 31 ; u++){
-            //System.out.println(arrayOf31[u]);
-        }
-        
         int twoRan1 = ran.nextInt(35);
         twoDublicatesArray[0] = twoRan1+1;
         int twoRan2 = ran.nextInt(35);
@@ -225,14 +206,6 @@ public class Ran11LottoRows {
             }
         }
         
-        //System.out.println("---");
-        
-        for(int i = 0 ; i < 2 ; i++){
-            //System.out.println(twoDublicatesArray[i]);
-        }
-        
-        //System.out.println("------------------------");
-        
         fillTheRestOfLottoArray();
         
     }
@@ -242,7 +215,7 @@ public class Ran11LottoRows {
         int randomNumberFromIndex = 0;
         int randomNumberUntilIndex = 0;
         int arrayOf31loopIter = 0;
-        //while ( x < 77){
+        
         for(int x = 0 ; x<77 ; x+=7){
             
             if ( x == 0){
@@ -302,136 +275,9 @@ public class Ran11LottoRows {
                 }
             }
             
-            
-           
-            
-        }
-        
-        
-        //setFlagArray();
-        
-        
-        //fixTheRows();
-    }
-        
-    public void setFlagArray(){
-    
-        for(int f = 0 ; f < 35 ; f++){
-            numberFlagArray[f] = false;
-        }
-        
-        for(int p = 0 ; p < 35 ; p++){
-            for(int i = 0 ; i<77 ; i++){
-                
-                if (lottoNumberArray[i] == (p+1)){
-                    numberFlagArray[p] = true;
-                }
-                else{
-                    //fixTheRows(p+1);
-                        
-                }
-                
-            }
-        }    
-                
-        printTheflagArray();  
-        
-        //sortArray11();
-    }
-    
-    
-    
-    public void printTheflagArray(){
-        for(int f = 0 ; f < 35 ; f++){
-            System.out.println("FlagArray: " + numberFlagArray[f]);
-        }  
-        System.out.println("-----------------");
-    }
-    
-    public void setLottoLabelColours(){
-        
-        int everyOtherIndex = 0;
-        
-        for(int i = 0 ; i < 77 ; i++){
-            if((i>-1 && i<7)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>6 && i<14)){
-                BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>13 && i<21)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>20 && i<28)){
-                BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>27 && i<35)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>34 && i<42)){
-                BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>41 && i<49)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>48 && i<56)){
-                BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>55 && i<63)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>62 && i<70)){
-                BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            else if((i>69 && i<77)){
-                BackgroundFill background_fill = new BackgroundFill(Color.LIGHTGREEN,  CornerRadii.EMPTY, Insets.EMPTY);
-                Background background = new Background(background_fill);
-                //lottoLabelArray[i].setBackground(background);
-            }
-            BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY); 
-            Background background = new Background(background_fill);
-            lottoLabelArray[i].setBackground(background);
-            //lottoLabelArray[i].setStyle("-fx-border-color: red;");
-            lottoLabelArray[i].setStyle("-fx-border-color: black;");
-            lottoLabelArray[i].setTextFill(Color.BLACK);
-        }
-        
-        for(int i = 0 ; i < 77 ; i++){
-            for(int t = 0 ; t<4 ; t++){ 
-                if(lottoNumberArray[i] == fixed4NumbersArray[t]+1){
-                    BackgroundFill background_fill = new BackgroundFill(Color.LIGHTBLUE,  CornerRadii.EMPTY, Insets.EMPTY); 
-                    Background background = new Background(background_fill);
-                    lottoLabelArray[i].setBackground(background);
-                    //lottoLabelArray[i].setStyle("-fx-border-color: pink;");
-                    //lottoLabelArray[i].setTextFill(Color.GREEN);
-                }
-                
-            }
-            
         }
         
     }
-    
     
     //Sorting every lottorow in acsending order
     public void sortArray7(){
@@ -602,6 +448,65 @@ public class Ran11LottoRows {
         }
     }
     
+    //
+    public void setLottoLabelColours(){
+        
+        
+        for(int i = 0 ; i < 77 ; i++){
+            
+            BackgroundFill background_fill = new BackgroundFill(Color.PINK,  CornerRadii.EMPTY, Insets.EMPTY); 
+            Background background = new Background(background_fill);
+            lottoLabelArray[i].setBackground(background);
+            lottoLabelArray[i].setStyle("-fx-border-color: black;");
+            lottoLabelArray[i].setTextFill(Color.BLACK);
+        }
+        
+        for(int i = 0 ; i < 77 ; i++){
+            for(int t = 0 ; t<4 ; t++){ 
+                if(lottoNumberArray[i] == fixed4NumbersArray[t]+1){
+                    BackgroundFill background_fill = new BackgroundFill(Color.LIGHTBLUE,  CornerRadii.EMPTY, Insets.EMPTY); 
+                    Background background = new Background(background_fill);
+                    lottoLabelArray[i].setBackground(background);
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    public void setFlagArray(){
+    
+        for(int f = 0 ; f < 35 ; f++){
+            numberFlagArray[f] = false;
+        }
+        
+        for(int p = 0 ; p < 35 ; p++){
+            for(int i = 0 ; i<77 ; i++){
+                
+                if (lottoNumberArray[i] == (p+1)){
+                    numberFlagArray[p] = true;
+                }
+                
+            }
+        }    
+                
+        printTheflagArray();  
+        
+    }
+    
+    
+    
+    public void printTheflagArray(){
+        for(int f = 0 ; f < 35 ; f++){
+            System.out.println("FlagArray: " + numberFlagArray[f]);
+        }  
+        System.out.println("-----------------");
+    }
+    
+    
     
     //filling the labels of the randomized kenorows
     public void fillThe11RowsInLabels(){
@@ -610,15 +515,10 @@ public class Ran11LottoRows {
         
         for(int w=0; w<77; w++){
             
-            //for(int i=0; i<7; i++){
-
-                lottoLabelArray[arrayIndex].setText(" " + (Integer.toString(lottoNumberArray[w])) + " ");
+            lottoLabelArray[arrayIndex].setText(" " + (Integer.toString(lottoNumberArray[w])) + " ");
                 arrayIndex++;
-            //}
-            
             
         }
-        
         
     }
     

@@ -60,8 +60,6 @@ public class Center extends VBox{
             hboxLabelArray[z] = new HBox();
             hboxLabelArray[z].setSpacing(3);
             hboxLabelArray[z].setPadding(new Insets(0, 0, 10, 0));
-            //hboxLabelArray[z].setFillHeight(true); 
-            //hboxLabelArray[z].autosize();
         }
         
         Font labelFont ;
@@ -92,7 +90,6 @@ public class Center extends VBox{
         numberLabelFont = Font.font("Arial", FontWeight.BOLD, 23);
         
         //creating objects of the lottoNumberArray labelarray and setting properties
-        
         for(int w = 0 ; w < lottoLabelArray.length ; w++){
             lottoLabelArray[w] = new Label();
             lottoLabelArray[w].setAlignment(Pos.TOP_CENTER);
@@ -152,30 +149,7 @@ public class Center extends VBox{
                     hboxIndex++;
                     squareNumber = 0;
                     break;
-                   /*
-                case 8:
-                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[lottoRowIndex]);
-                    lottoRowIndex++;
-                    squareNumber++;
-                    break;
-                    
-                case 9:
-                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
-                    squareNumber++;
-                    break;
-                case 10:
-                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
-                    squareNumber++;
-                    break;
-                case 11:
-                    hboxLabelArray[hboxIndex].getChildren().add(lottoLabelArray[kenoRowIndex]);
-                    kenoRowIndex++;
-                    hboxIndex++;
-                    squareNumber = 0;
-                    break;
-                    */
+                  
                 default:
                     break;
             }

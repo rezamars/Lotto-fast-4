@@ -39,10 +39,6 @@ public class Left extends VBox{
     private Label[] fixed4LabelArray = new Label[4];
     private int[] fixed4NumbersArray = new int[4];
     
-    private Spinner spinner = new Spinner();
-    private Slider slider = new Slider();
-    private DatePicker dp1 = new DatePicker();
-    
     private Button[] chooseNumberbutton = new Button[4];
     private NumberChooser numberChooser = new NumberChooser(this);
     private Button[] buttonArray; 
@@ -91,7 +87,6 @@ public class Left extends VBox{
             hboxLabelArray[z].setSpacing(25);
             hboxLabelArray[z].setFillHeight(true); 
             hboxLabelArray[z].autosize();
-            //hboxLabelArray[z].setMinSize(200, 80);
             hboxLabelArray[z].setAlignment(Pos.CENTER_LEFT);
             
         }
